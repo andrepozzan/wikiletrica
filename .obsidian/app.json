@@ -1,0 +1,6 @@
+{
+  "useMarkdownLinks": true,
+  "attachmentFolderPath": "static/anexos/",
+  "newLinkFormat": "relative",
+  "alwaysUpdateLinks": true
+}

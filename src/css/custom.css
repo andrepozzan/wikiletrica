@@ -1,0 +1,102 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #B28900;
+  --ifm-color-primary-dark: #b98e00;
+  --ifm-color-primary-darker: #8f6d00;
+  --ifm-color-primary-darkest: #5e4800;
+  --ifm-color-primary-light: #f5c211;
+  --ifm-color-primary-lighter: #ffdc31;
+  --ifm-color-primary-lightest: #ffe77b;
+  --ifm-font-family-base: "Space Grotesk", sans-serif;
+  --ifm-heading-font-family: "Space Grotesk", sans-serif;
+  --ifm-navbar-background-color: #090909;
+  --ifm-navbar-link-color: #f8f5ec;
+  --ifm-font-color-base: #181818;
+  --ifm-heading-color: #111111;
+  --ifm-menu-color: #35322c;
+  --ifm-menu-color-active: #a87900;
+  --ifm-breadcrumb-color-active: #8f6d00;
+  --ifm-toc-link-color: #4f4b43;
+  --ifm-background-color: #f8f5ec;
+  --ifm-background-surface-color: #fffdf7;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(245, 194, 17, 0.16);
+}
+
+[data-theme="light"] {
+  --ifm-font-color-base: #161616;
+  --ifm-color-content: #161616;
+  --ifm-color-content-secondary: #3f3b34;
+  --ifm-heading-color: #111111;
+  --ifm-menu-color: #24221e;
+  --ifm-menu-color-active: #8f6d00;
+  --ifm-breadcrumb-color-active: #8f6d00;
+  --ifm-toc-link-color: #3f3b34;
+  --ifm-table-cell-color: #24221e;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  --ifm-color-primary: #f5c211;
+  --ifm-color-primary-dark: #dba900;
+  --ifm-color-primary-darker: #b98e00;
+  --ifm-color-primary-darkest: #8f6d00;
+  --ifm-color-primary-light: #ffdc31;
+  --ifm-color-primary-lighter: #ffe77b;
+  --ifm-color-primary-lightest: #fff1ad;
+  --ifm-background-color: #101010;
+  --ifm-background-surface-color: #181818;
+  --ifm-font-color-base: #f3f0e7;
+  --ifm-heading-color: #fffdf7;
+  --ifm-menu-color: #d9d5ca;
+  --ifm-menu-color-active: #f5c211;
+  --ifm-breadcrumb-color-active: #f5c211;
+  --ifm-toc-link-color: #d9d5ca;
+  --docusaurus-highlighted-code-line-bg: rgba(245, 194, 17, 0.18);
+}
+
+html,
+body,
+#__docusaurus,
+.main-wrapper {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+[data-theme="light"] .markdown,
+[data-theme="light"] .theme-doc-sidebar-menu,
+[data-theme="light"] .table-of-contents,
+[data-theme="light"] .breadcrumbs {
+  color: #161616;
+}
+
+[data-theme="light"] .markdown p,
+[data-theme="light"] .markdown li,
+[data-theme="light"] .markdown td,
+[data-theme="light"] .markdown th {
+  color: #24221e;
+}
+
+.navbar {
+  border-bottom: 1px solid rgba(245, 194, 17, 0.24);
+  box-shadow: none;
+}
+
+.navbar__title {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.katex-display {
+  margin: 1rem 0;
+  text-align: center;
+  font-size: 1.25em;
+}

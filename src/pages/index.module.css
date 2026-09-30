@@ -1,0 +1,242 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  width: 100%;
+  margin: 0;
+  min-height: min(760px, calc(100vh - 60px));
+  padding: 7rem 0 3rem;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  color: #f8f5ec;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 5, 5, 0.98) 0%,
+      rgba(5, 5, 5, 0.82) 48%,
+      rgba(5, 5, 5, 0.5) 100%
+    ),
+    #080808;
+  border-bottom: 1px solid #f5c211;
+}
+
+.heroBanner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.3;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38)),
+    url("/background-dots.svg") 0 0 / 420px,
+    url("/background-undulate.svg") right center / 50% 88% no-repeat;
+  filter: sepia(1) saturate(12) hue-rotate(350deg) contrast(1.15);
+}
+
+.heroContent {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 3rem;
+  /* padding-left: 1.5rem; */
+  box-sizing: border-box;
+}
+
+.heroCopy,
+.heroVisual {
+  width: 100%;
+}
+
+.heroCopy {
+  justify-self: center;
+  max-width: 560px;
+  text-align: left;
+}
+
+.heroVisual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroMark {
+  position: relative;
+  width: min(70%, 500px);
+  opacity: 0.95;
+  filter: drop-shadow(0 0 24px rgba(245, 194, 17, 0.2));
+  pointer-events: none;
+}
+
+.kicker {
+  margin-bottom: 1.3rem;
+  color: #f5c211;
+  font:
+    700 0.75rem/1.2 "Space Grotesk",
+    sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.logo {
+  display: block;
+  width: clamp(180px, 25vw, 290px);
+  margin-bottom: 1.8rem;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
+}
+
+.heroTitle {
+  max-width: 720px;
+  margin: 0;
+  margin-top: 5rem;
+  color: #f8f5ec;
+  font:
+    900 clamp(3.4rem, 6vw, 7.6rem)/0.88 "Anton",
+    Impact,
+    sans-serif;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.heroTitle span {
+  color: #f5c211;
+}
+
+.heroTitle,
+.heroSubtitle {
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.9);
+}
+
+.heroSubtitle {
+  max-width: 540px;
+  margin: 1.7rem 0 2.2rem;
+  color: #f0ede4;
+  font:
+    400 1.05rem/1.65 "Space Grotesk",
+    sans-serif;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    min-height: 700px;
+    padding: 5rem 1.5rem 6rem;
+  }
+
+  .heroContent {
+    grid-template-columns: 1fr;
+    padding: 0 1.5rem;
+  }
+
+  .heroCopy,
+  .heroVisual {
+    width: 100%;
+  }
+
+  .heroVisual {
+    position: absolute;
+    inset: auto 0 5rem;
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  .heroMark {
+    width: min(52vw, 360px);
+  }
+
+  .heroBottomLine {
+    gap: 1rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .heroBottomLine span:last-child {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroTitle {
+    font-size: 3.25rem;
+  }
+  .buttons,
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 5.5rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 52px;
+  padding: 0 1.35rem;
+  font:
+    700 0.78rem/1 "Space Grotesk",
+    sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.primaryButton {
+  color: #090909;
+  background: #f5c211;
+  box-shadow: 5px 5px 0 #f8f5ec;
+}
+
+.secondaryButton {
+  color: #f8f5ec;
+  border: 1px solid rgba(248, 245, 236, 0.55);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  color: #090909;
+  text-decoration: none;
+  transform: translate(-2px, -2px);
+}
+
+.primaryButton:hover {
+  box-shadow: 8px 8px 0 #f8f5ec;
+  background: #ffdc31;
+}
+.secondaryButton:hover {
+  background: #f8f5ec;
+}
+
+.heroBottomLine {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem max(1.5rem, calc((100vw - 1140px) / 2));
+  color: #77746b;
+  border-top: 1px solid rgba(245, 194, 17, 0.28);
+  font:
+    700 0.62rem/1 "Space Grotesk",
+    sans-serif;
+  letter-spacing: 0.16em;
+}
