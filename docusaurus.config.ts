@@ -7,13 +7,14 @@ const config = {
   title: "Wikilétrica",
   tagline:
     "Base de conhecimento e colaboração do curso de Engenharia Elétrica, Wiki + elétrica = Wikilétrica",
-  favicon: "img/favicon.ico",
+  favicon: "bolt.svg",
 
   url: "https://andrepozzan.github.io",
-  baseUrl: "/wikletrica/",
+  baseUrl: "/wikiletrica/",
+  trailingSlash: true,
 
   organizationName: "andrepozzan",
-  projectName: "wikletrica",
+  projectName: "wikiletrica",
 
   onBrokenLinks: "throw",
 
@@ -37,7 +38,7 @@ const config = {
         docs: {
           sidebarPath: "./sidebars.ts",
           editUrl:
-            "https://github.com/andrepozzan/wikletrica/tree/main/",
+            "https://github.com/andrepozzan/wikiletrica/tree/main/",
           beforeDefaultRemarkPlugins: [pdfToObject],
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
@@ -76,6 +77,22 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     {
+      image: "banner.jpeg",
+      metadata: [
+        {
+          name: "description",
+          content:
+            "Base de conhecimento colaborativa do curso de Engenharia Elétrica, com disciplinas, materiais, laboratórios e projetos.",
+        },
+        {
+          name: "keywords",
+          content:
+            "engenharia elétrica, UFPR, disciplinas, circuitos elétricos, eletrônica, materiais, laboratório",
+        },
+        { name: "author", content: "Wikilétrica" },
+        { name: "robots", content: "index, follow" },
+        { name: "theme-color", content: "#090909" },
+      ],
       navbar: {
         title: "Wikilétrica",
         items: [
@@ -86,7 +103,7 @@ const config = {
             label: "Disciplinas",
           },
           {
-            href: "https://github.com/andrepozzan/wikletrica",
+            href: "https://github.com/andrepozzan/wikiletrica",
             label: "GitHub",
             position: "right",
           },
