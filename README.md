@@ -1,6 +1,29 @@
-# Website
+# Wikilétrica
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+<p align="center">
+	<img src="./static/logo-yellow.svg" alt="Logo Wikilétrica" width="280" />
+</p>
+
+<p align="center">
+	Base de conhecimento colaborativa do curso de Engenharia Elétrica.
+</p>
+
+## Objetivo
+
+A Wikilétrica reúne materiais, disciplinas, roteiros de laboratório, projetos,
+referências e conteúdos de apoio para estudantes de Engenharia Elétrica.
+O projeto busca facilitar o acesso ao conhecimento e incentivar a colaboração
+entre estudantes e professores.
+
+## Acesso
+
+- [Acessar a Wikilétrica no GitHub Pages](https://andrepozzan.github.io/wikiletrica/)
+- [Repositório no GitHub](https://github.com/andrepozzan/wikiletrica)
+
+## Tecnologias
+
+Este site é construído com [Docusaurus](https://docusaurus.io/), um gerador
+moderno de sites estáticos baseado em React.
 
 ## Installation
 
@@ -8,7 +31,7 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 npm install
 ```
 
-**Note**: feel free to use the package manager of your choice.
+O projeto exige Node.js 20 ou superior.
 
 ## Local Development
 
@@ -16,7 +39,8 @@ npm install
 npm run start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+O servidor local é iniciado em modo de desenvolvimento e a maioria das
+alterações aparece automaticamente no navegador.
 
 ## Build
 
@@ -24,20 +48,26 @@ This command starts a local development server and opens up a browser window. Mo
 npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+Este comando gera o conteúdo estático no diretório `build`.
 
 ## Deployment
 
-Using SSH:
+Usando SSH:
 
 ```bash
 USE_SSH=true npm run deploy
 ```
 
-Not using SSH:
+Sem usar SSH:
 
 ```bash
 GIT_USER=<Your GitHub username> npm run deploy
 ```
 
-If you are using GitHub Pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Para publicar no GitHub Pages, use o nome do usuário do GitHub:
+
+```bash
+GIT_USER=andrepozzan npm run deploy
+```
+
+O comando gera o site e envia o resultado para a branch `gh-pages`.
