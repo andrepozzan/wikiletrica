@@ -12,7 +12,7 @@ const publicPdfUrl = (url: string) => {
 
   const [path, suffix = ""] = url.split(/([?#].*)/, 2);
   const filename = path.split("/").pop() || path;
-  return `/wikletrica/anexos/${filename}${suffix}`;
+  return `/wikiletrica/anexos/${filename}${suffix}`;
 };
 
 const pdfToObject: Plugin<[], Root> = () => (tree) => {

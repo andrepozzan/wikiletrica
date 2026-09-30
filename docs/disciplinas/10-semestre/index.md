@@ -12,5 +12,5 @@ Disciplinas previstas para o décimo semestre de Engenharia Elétrica.
 
 | Sigla                                                                               | Disciplina                        | Carga horária |
 | ----------------------------------------------------------------------------------- | --------------------------------- | ------------: |
-| [TE346](/wikletrica/docs/disciplinas/semestre/te346-engenharia-eletrica-sociedade/) | Engenharia Elétrica e Sociedade   |          60 h |
-| [TE348](/wikletrica/docs/disciplinas/semestre/te348-trabalho-conclusao-curso-2/)    | Trabalho de Conclusão de Curso II |         150 h |
+| [TE346](/wikiletrica/docs/disciplinas/semestre/te346-engenharia-eletrica-sociedade/) | Engenharia Elétrica e Sociedade   |          60 h |
+| [TE348](/wikiletrica/docs/disciplinas/semestre/te348-trabalho-conclusao-curso-2/)    | Trabalho de Conclusão de Curso II |         150 h |
