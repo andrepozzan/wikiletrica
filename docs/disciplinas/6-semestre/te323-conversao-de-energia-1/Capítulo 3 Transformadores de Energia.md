@@ -335,8 +335,11 @@ regulação e do rendimento é de suma importância.
 
 ### Regulação
 $$
-Reg(\%) = \frac{E_2 - V_2}{E_2} \cdot 100
+Reg(\%) = \frac{V_1 - V_2'}{V_1} \cdot 100
 $$
+Para $V_1 = V_2' + \Delta V$
+
+Sendo, $\Delta V$ a queda de tensão em cima de $Z_{eq}$ e $V_2' = V_2 \cdot a$ tensão do secundário refletida no primário. 
 
 ### Rendimento
 
@@ -354,6 +357,126 @@ $$
 $$
 \text{watts de saída} = \text{watts de entrada} - \sum \text{perdas}
 $$
+$$
+\eta = \frac{FP \cdot S_n}{FP \cdot S_n + P_{erdas}}
+$$
+
+Para $P_{erdas} = P_{cc} + P_{ca}$, $P_{cc}$ e $P_{ca}$ vem dos ensaios realizados no transformador.
 
 
+Fator de potência
 
+$$
+FP = cos(\theta)
+$$
+
+$$
+\theta = arccos(FP)
+$$
+
+## Impedância percentual de transformadores
+
+A impedância percentual, também conhecida como impedância de curto-circuito percentual $Z(\%)$, é uma medida que expressa a queda de tensão interna do transformador quando ele está fornecendo sua corrente nominal, referida à tensão nominal. Em outras palavras, ela representa a porcentagem da tensão nominal que seria "perdida" internamente devido à impedância do transformador se uma corrente nominal estivesse fluindo por ele.
+
+Para se calcular a impedância percentual:
+$$
+Z\% = \frac{V_{cc}}{V_n}
+$$
+
+Impedância do Transformador em Ohms
+$$
+Z_t = (\frac{V^2}{S_N}) \cdot \frac{Z\%}{100}
+$$
+
+Corrente de curto-circuito aproximada
+$$
+I_{cc} = \frac{V_L}{Z_t \cdot \sqrt{3}}
+$$
+
+## Operação em paralelo de transformadores
+Dois transformadores operam em paralelo, quando recebem energia de um mesmo barramento, entregando-a em um barramento comum.
+
+![](../../../../static/anexos/Pasted%20image%2020260930212924.png)
+
+$$
+I_{circ} = \frac{E_{2a} - E_{2b}}{Z_{eq_a} + Z_{eq_b}}
+$$
+
+Caso a regulação de transformação dos dois transformadores não forem iguais haverá uma diferença de tensão no secundário dos transformadores, que provocará uma corrente circulante entre os transformadores.
+
+## Autotransformadores
+
+Quando os dois enrolamentos de um transformador monofásico convencional são conectados em série, tem-se um autotransformador.
+
+![](../../../../static/anexos/Pasted%20image%2020260930213430.png)
+
+
+![](../../../../static/anexos/Pasted%20image%2020260930213513.png)
+
+![](../../../../static/anexos/Pasted%20image%2020260930213525.png)
+
+
+$$
+\frac{V_A}{V_B} = \frac{E_1 + E_2}{E_2}
+$$
+
+$$
+\frac{V_A}{V_B} = \frac{N_1 + N_2}{N_2}
+$$
+
+
+Considerando o autotransformador ideal, a corrente de excitação é nula, ficando a corrente no lado da alta tensão da seguinte forma:
+
+$$
+I_A = I_1 = \frac{N_2}{N_1} \cdot I_2
+$$
+
+$$
+I_B = I_1 + I_2
+$$
+
+A corrente no lado de baixa tensão é a soma das correntes nos enrolamentos. A relação entre as correntes fica da seguinte forma:
+
+$$
+\frac{I_A}{I_B} = \frac{I_1}{I_1 + I_2} = \frac{N_1}{N_1 + N_2}
+$$
+
+---
+
+A potência aparente do autotransformador ideal é determinada por:
+
+$$
+S_{auto} = V_A \cdot I_A = (E_1 + E_2) \cdot I_1
+$$
+
+A potência aparente de um transformador convencional:
+
+$$
+S_{conv} = E_1 \cdot I_1 = E_2 \cdot I_2
+$$
+
+A relação entre essas duas potências fica da seguinte forma:
+
+$$
+\frac{S_{auto}}{S_{conv}} = 1 + \frac{E_2}{E_1}
+$$
+
+Manipulando a equação:
+
+$$
+S_{auto} = S_{conv} + S_{conv} \cdot \frac{E_2}{E_1}
+$$
+
+---
+
+A relação entre as potências do transformador convencional e do autotransformador:
+
+$$
+S_{auto} = S_{conv} + S_{conv} \cdot \frac{E_2}{E_1}
+$$
+
+A partir da relação de potência dos transformadores, tem-se qual a parcela de potência transferida diretamente Sauto+ pelo autotransformador, ou seja, não por indução magnética é dada por:
+
+$$
+S_{auto+} \approx S_{conv} \cdot \frac{E_2}{E_1}
+$$
