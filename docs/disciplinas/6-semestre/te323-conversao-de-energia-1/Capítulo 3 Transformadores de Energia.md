@@ -411,19 +411,37 @@ Quando os dois enrolamentos de um transformador monofásico convencional são co
 ![](../../../../static/anexos/Pasted%20image%2020260930213430.png)
 
 
+---
+
+A principal diferença entre as configurações de um autotransformador está na forma como os enrolamentos são associados para formar os terminais de alta tensão ($V_A$) e baixa tensão ($V_B$).
+
+### Autotransformador Abaixador
+
 ![](../../../../static/anexos/Pasted%20image%2020260930213513.png)
 
+Na configuração abaixadora, a tensão de entrada (alta tensão, $V_A$) é aplicada sobre a associação em série dos dois enrolamentos, enquanto a tensão de saída (baixa tensão, $V_B$) é obtida sobre apenas um dos enrolamentos (geralmente $E_2$). 
+- $V_A = E_1 + E_2$
+- $V_B = E_2$
+
+A relação de tensões para o abaixador fica da seguinte forma:
+
+$$
+\frac{V_A}{V_B} = \frac{E_1 + E_2}{E_2} = \frac{N_1 + N_2}{N_2}
+$$
+
+### Autotransformador Elevador
 ![](../../../../static/anexos/Pasted%20image%2020260930213525.png)
+Na configuração elevadora, ocorre o inverso: a tensão de entrada (baixa tensão, $V_B$) é aplicada sobre apenas um dos enrolamentos (geralmente $E_1$), e a tensão de saída (alta tensão, $V_A$) é obtida a partir da soma das tensões dos dois enrolamentos em série.
+- $V_A = E_1 + E_2$
+- $V_B = E_1$
 
+A relação de tensões para o elevador fica da seguinte forma:
 
 $$
-\frac{V_A}{V_B} = \frac{E_1 + E_2}{E_2}
+\frac{V_A}{V_B} = \frac{E_1 + E_2}{E_1} = \frac{N_1 + N_2}{N_1}
 $$
 
-$$
-\frac{V_A}{V_B} = \frac{N_1 + N_2}{N_2}
-$$
-
+---
 
 Considerando o autotransformador ideal, a corrente de excitação é nula, ficando a corrente no lado da alta tensão da seguinte forma:
 
@@ -440,8 +458,6 @@ A corrente no lado de baixa tensão é a soma das correntes nos enrolamentos. A 
 $$
 \frac{I_A}{I_B} = \frac{I_1}{I_1 + I_2} = \frac{N_1}{N_1 + N_2}
 $$
-
----
 
 A potência aparente do autotransformador ideal é determinada por:
 
@@ -467,16 +483,89 @@ $$
 S_{auto} = S_{conv} + S_{conv} \cdot \frac{E_2}{E_1}
 $$
 
----
-
-A relação entre as potências do transformador convencional e do autotransformador:
+A relação entre as potências do transformador abaixador convencional e do autotransformador:
 
 $$
 S_{auto} = S_{conv} + S_{conv} \cdot \frac{E_2}{E_1}
 $$
 
-A partir da relação de potência dos transformadores, tem-se qual a parcela de potência transferida diretamente Sauto+ pelo autotransformador, ou seja, não por indução magnética é dada por:
+A partir da relação de potência dos transformadores, tem-se qual a parcela de potência transferida diretamente $S_{auto+}$ pelo autotransformador, ou seja, não por indução magnética, é dada por:
 
 $$
 S_{auto+} \approx S_{conv} \cdot \frac{E_2}{E_1}
 $$
+
+*(Para $E_1$ e $E_2$ tensões nominais para cada enrolamento em ligação normal do transformador, sem ser auto).*
+
+
+
+
+# Potência no Autotransformador: Ligação Aditiva vs. Subtrativa
+
+A fórmula clássica e mais conhecida para a potência do autotransformador pressupõe uma ligação **aditiva** padrão. No entanto, a verdadeira capacidade de potência de um autotransformador depende estritamente de **qual enrolamento está em série** e de como as tensões se relacionam na saída (se somam ou se subtraem).
+
+### 1. A Regra Geral (Limitada pela Corrente)
+A potência máxima que o autotransformador pode entregar sem queimar é sempre limitada pela corrente nominal do enrolamento que fica conectado em **série** com a linha de saída. 
+
+A fórmula universal e mais segura para calcular a potência aparente de saída é:
+
+$$
+S_{auto} = V_{saida} \cdot I_{serie\_nom}
+$$
+
+Onde a corrente nominal do enrolamento em série é extraída dos dados do transformador convencional:
+
+$$
+I_{serie\_nom} = \frac{S_{conv}}{V_{serie}}
+$$
+
+---
+
+### 2. Ligação Aditiva (As tensões se somam)
+Na polaridade aditiva, a tensão do enrolamento em série é somada à tensão do enrolamento comum.
+* **Tensão de Saída:** $V_{saida} = V_{comum} + V_{serie}$
+
+Neste caso específico, a fórmula universal pode ser matematicamente reescrita na sua forma clássica:
+
+$$
+S_{auto} = S_{conv} \cdot \left(1 + \frac{V_{comum}}{V_{serie}}\right)
+$$
+
+**Exemplo prático (1200 V e 120 V em Aditiva):**
+* $V_{saida} = 1200\text{ V} + 120\text{ V} = 1320\text{ V}$
+* Aplicando a fórmula genérica:
+
+$$
+S_{auto} = 10\text{k} \cdot \left(1 + \frac{1200}{120}\right) = 110\text{ kVA}
+$$
+
+---
+
+### 3. Ligação Subtrativa (As tensões se subtraem)
+Na polaridade subtrativa (como no caso do Exercício 14), a tensão do enrolamento em série é **subtraída** da tensão do enrolamento comum.
+* **Tensão de Saída:** $V_{saida} = V_{comum} - V_{serie}$
+
+Como a tensão no terminal de saída é menor, mas o limite de corrente imposto pelo enrolamento em série continua o mesmo, a potência total entregue à carga **diminui**. 
+
+**A fórmula genérica com o sinal de soma $(1 + \dots)$ falha aqui.** Devemos usar o raciocínio da corrente limitante:
+
+$$
+S_{auto} = (V_{comum} - V_{serie}) \cdot I_{serie\_nom}
+$$
+
+**Exemplo prático (Ex. 14 - 1200 V e 120 V em Subtrativa):**
+* $V_{saida} = 1200\text{ V} - 120\text{ V} = 1080\text{ V}$
+* Corrente máxima tolerada pelo enrolamento em série de 120 V = $83,33\text{ A}$
+
+$$
+S_{auto} = 1080\text{ V} \cdot 83,33\text{ A} = 90\text{ kVA}
+$$
+
+---
+
+### Resumo / Conclusão
+Nunca aplique a relação de transformação $\frac{E_1}{E_2}$ diretamente sem antes verificar o circuito elétrico. É necessário identificar:
+1. Qual enrolamento faz o papel de **comum** e qual está **em série**.
+2. Se a tensão no terminal da carga é resultado de uma **soma** (aditiva) ou **subtração** (subtrativa) dessas bobinas.
+
+Na **ligação subtrativa**, a potência $S_{auto}$ (Ex: $90\text{ kVA}$) será **menor** do que na aditiva (Ex: $110\text{ kVA}$) porque a tensão efetiva de saída cai, enquanto o "gargalo" da corrente nominal da bobina em série permanece inalterado.
