@@ -315,6 +315,8 @@ $I_0 \cdot \cos\varphi_0 = I_p$
 Tem-se:
 $I_q = I_0 \cdot \operatorname{sen}\varphi_0$
 
+$I_q$ é a corrente do ramo magnetizante que pode ser também $I_m$
+
 Com os valores das correntes do ramo magnetizante, podemos calcular os valores de resistência e reatância:
 $R_c = \frac{V_1}{I_p}$
 e
@@ -340,6 +342,7 @@ $$
 Para $V_1 = V_2' + \Delta V$
 
 Sendo, $\Delta V$ a queda de tensão em cima de $Z_{eq}$ e $V_2' = V_2 \cdot a$ tensão do secundário refletida no primário. 
+
 
 ### Rendimento
 
@@ -569,3 +572,49 @@ Nunca aplique a relação de transformação $\frac{E_1}{E_2}$ diretamente sem a
 2. Se a tensão no terminal da carga é resultado de uma **soma** (aditiva) ou **subtração** (subtrativa) dessas bobinas.
 
 Na **ligação subtrativa**, a potência $S_{auto}$ (Ex: $90\text{ kVA}$) será **menor** do que na aditiva (Ex: $110\text{ kVA}$) porque a tensão efetiva de saída cai, enquanto o "gargalo" da corrente nominal da bobina em série permanece inalterado.
+
+
+para ABC:
+- Se estou em **Y**, quem tem defasagem de $30^\circ$ é a **Tensão**.
+    
+    - Tensão Linha = Fase $+ 30^\circ$
+        
+- Se estou em **$\Delta$**, quem tem defasagem de $30^\circ$ é a **Corrente**.
+    
+    - Corrente Linha = Fase $- 30^\circ$
+
+
+
+$$
+V = 4,44NfB_{máx}A
+$$
+
+
+
+
+$$
+\frac{V}{N} = e[\frac{Volt}{espira}]
+$$
+
+De forma que:
+
+$$
+\frac{V}{N} = \frac{4,44NfB_{máx}A}{N}
+$$
+
+$$
+e = 4,44fB_{máx}A
+$$
+
+$$
+\frac{e}{4,44fB_{máx}} = A
+$$
+
+
+
+
+
+
+
+
+
