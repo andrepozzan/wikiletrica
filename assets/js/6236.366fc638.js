@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkwikiletrica||=[]).push([[6236],{66236(e,i,a){a.d(i,{createCynefinServices:()=>c.t});var c=a(49760);a(80184)}}]);

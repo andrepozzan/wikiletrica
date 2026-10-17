@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkwikiletrica||=[]).push([[293],{60293(e,i,a){a.d(i,{createEventModelingServices:()=>c.g});var c=a(46988);a(80184)}}]);

@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkwikiletrica||=[]).push([[3192],{13192(e,c,i){i.d(c,{createArchitectureServices:()=>r.S});var r=i(84549);i(80184)}}]);
