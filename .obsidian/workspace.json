@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8ba688061764053b",
+        "id": "6b1db99ae1af4b92",
         "type": "tabs",
         "children": [
           {
-            "id": "f459bc769e1f91d0",
+            "id": "d01f37e939d3a971",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/disciplinas/6-semestre/te323-conversao-de-energia-1/Capítulo 3 Transformadores de Energia.md",
+                "file": "docs/disciplinas/6-semestre/te344-instalacoes-eletricas-prediais-industriais-1/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Capítulo 3 Transformadores de Energia"
+              "title": "index"
             }
           }
         ]
@@ -83,8 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 295.5,
-    "collapsed": true
+    "width": 295.5
   },
   "right": {
     "id": "81fa2c63148a81fd",
@@ -189,8 +188,9 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "f459bc769e1f91d0",
+  "active": "d01f37e939d3a971",
   "lastOpenFiles": [
+    "docs/disciplinas/6-semestre/te323-conversao-de-energia-1/Capítulo 3 Transformadores de Energia.md",
     "build/search-index.json",
     "build/sitemap.xml",
     "build/index.html",
@@ -201,7 +201,6 @@
     "build/docs/disciplinas/semestre/tt081-administracao-empresas/index.html",
     "build/docs/disciplinas/semestre/tt081-administracao-empresas",
     "build/docs/disciplinas/semestre/tq190-introducao-eletroquimica/index.html",
-    "build/docs/disciplinas/semestre/tq190-introducao-eletroquimica",
     "build/img/undraw_docusaurus_tree.svg",
     "build/img/undraw_docusaurus_react.svg",
     "build/img/undraw_docusaurus_mountain.svg",
@@ -212,7 +211,6 @@
     "build/img/bolt.svg",
     "build/img/NovoTopo.png",
     "build/img/Fundo_01.png",
-    "docs/disciplinas/6-semestre/te323-conversao-de-energia-1/Capítulo 3 Transformadores de Energia.md",
     "docs/disciplinas/6-semestre/te323-conversao-de-energia-1/index.md",
     "docs/disciplinas/6-semestre/te323-conversao-de-energia-1/Capítulo 2 Circuitos Magnéticos.md",
     "docs/disciplinas/3-semestre/te337-materiais-eletricos/index.md",

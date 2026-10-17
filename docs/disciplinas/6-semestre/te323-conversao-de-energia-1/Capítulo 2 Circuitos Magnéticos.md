@@ -1,135 +1,179 @@
-#### Principais equações
+---
+id: te323-circuitos-magneticos
+title: 2. Circuitos Magnéticos
+tags:
+  - conversao-de-energia
+  - circuitos-magneticos
+---
+
+# Capítulo 2: Circuitos Magnéticos
+
+Os circuitos magnéticos oferecem um modelo prático e aproximado para analisar o fluxo magnético em dispositivos eletromagnéticos (núcleos de ferro, relés, máquinas elétricas, reatores e transformadores), traçando uma analogia direta com os circuitos elétricos lineares (Lei de Ohm).
+
+---
+
+## 1. Analogia Eletromecânica / Magnética (Lei de Hopkinson)
+
+A relação fundamental em circuitos magnéticos decorre da Lei Circuital de Ampère aplicada a materiais de alta permeabilidade:
+
+| Grandeza Elétrica | Símbolo / Unidade | Grandeza Magnética | Símbolo / Unidade |
+| :--- | :--- | :--- | :--- |
+| **Força Eletromotriz (fem)** | $\mathcal{E}$ ou $V$ $[\text{V}]$ | **Força Magnetomotriz (fmm)** | $\mathcal{F} = N \cdot I$ $[\text{A}\cdot\text{e}]$ |
+| **Corrente Elétrica** | $I$ $[\text{A}]$ | **Fluxo Magnético** | $\phi$ $[\text{Wb}]$ |
+| **Resistência** | $R = \frac{l}{\sigma A}$ $[\Omega]$ | **Relutância** | $\mathcal{R} = \frac{l}{\mu A}$ $[\text{A}\cdot\text{e/Wb} \text{ ou } \text{H}^{-1}]$ |
+| **Condutância** | $G = \frac{1}{R}$ $[\text{S}]$ | **Permeância** | $\mathcal{P} = \frac{1}{\mathcal{R}}$ $[\text{Wb/A}\cdot\text{e} \text{ ou } \text{H}]$ |
+| **Condutividade** | $\sigma$ $[\text{S/m}]$ | **Permeabilidade** | $\mu = \mu_r \mu_0$ $[\text{H/m}]$ |
+| **Densidade de Corrente** | $J = \frac{I}{A}$ $[\text{A/m}^2]$ | **Densidade de Fluxo** | $B = \frac{\phi}{A}$ $[\text{T}]$ |
+| **Campo Elétrico** | $E = \frac{V}{l}$ $[\text{V/m}]$ | **Campo Magnético** | $H = \frac{\mathcal{F}}{l}$ $[\text{A}\cdot\text{e/m}]$ |
+
+### Lei de Ohm Magnética (Lei de Hopkinson)
 
 $$
-R_n = \frac{l_n}{A_n  \cdot \mu}
+\mathcal{F} = \phi \cdot \mathcal{R} \iff \phi = \frac{\mathcal{F}}{\mathcal{R}} = \frac{N \cdot I}{\mathcal{R}}
 $$
 
-para $\mu = \mu_r \cdot \mu_0$
+Para um elemento ou segmento magnético de seção transversal $A_n$, comprimento médio $l_n$ e permeabilidade $\mu$:
 
 $$
-e = N \frac{d\phi}{dt} = \mathcal{F}_{\text{em}}
+\mathcal{R}_n = \frac{l_n}{\mu \cdot A_n}
 $$
 
-$$
-\phi = B \cdot A
-$$
+onde $\mu = \mu_r \cdot \mu_0$ com $\mu_0 = 4\pi \times 10^{-7} \text{ H/m}$.
+
+---
+
+## 2. Leis de Kirchhoff para Circuitos Magnéticos
+
+1. **Lei dos Nós Magnéticos:** A soma dos fluxos que entram em qualquer nó magnético é igual à soma dos fluxos que saem:
+   $$
+   \sum \phi_k = 0
+   $$
+2. **Lei das Malhas Magnéticas:** A soma algébrica das forças magnetomotrizes ($\sum N_k I_k$) ao longo de qualquer percurso fechado é igual à soma das quedas de potencial magnético ($\sum H_k l_k = \sum \phi_k \mathcal{R}_k$):
+   $$
+   \sum \mathcal{F} = \sum \mathcal{R}_k \phi_k \iff \oint \vec{H} \cdot d\vec{l} = \sum N_k I_k
+   $$
+
+---
+
+## 3. Comprimento Médio do Núcleo ($l_c$) e Entreferros
+
+### 3.1 Caminho Médio ($l_c$)
+O comprimento médio representa o caminho geométrico central percorrido pelas linhas de fluxo fechadas no núcleo:
+
+![Caminho médio do núcleo magnético](../../../../static/anexos/Pasted%20image%2020260929204410.png)
+
+#### Exemplo Prático de Geometria Fechada:
+Dado um núcleo retangular com dimensões externas de $8\text{ in} \times 10\text{ in}$ e pernas com espessura de $2\text{ in}$ (logo, $1\text{ in}$ para cada lado a partir do centro da janela):
+* **Largura média:** $8\text{ in} - 1\text{ in} - 1\text{ in} = 6\text{ in}$
+* **Altura média:** $10\text{ in} - 1\text{ in} - 1\text{ in} = 8\text{ in}$
+* **Comprimento total ($l_c$):** $2 \times 6\text{ in} + 2 \times 8\text{ in} = 28\text{ in}$
+* **Conversão para o SI:**
+  $$
+  1\text{ in} = 0{,}0254\text{ m} \implies l_c = 28 \times 0{,}0254 = 0{,}7112\text{ m}
+  $$
+
+> [!NOTE] Fatores Úteis de Conversão de Unidades:
+> * $1\text{ in} = 0{,}0254\text{ m}$
+> * $1\text{ cm}^2 = 10^{-4}\text{ m}^2 = 100\text{ mm}^2$
+> * $1\text{ cm}^3 = 10^{-6}\text{ m}^3$
+
+---
+
+### 3.2 O Efeito do Entreferro (*Air Gap*)
+Quando o núcleo possui um pequeno corte transversal de ar (entreferro) de comprimento $g$:
+1. A permeabilidade do ar é $\mu_0 \ll \mu_{\text{núcleo}}$, logo a sua relutância $\mathcal{R}_g = \frac{g}{\mu_0 A_g}$ costuma predominar sobre a do ferro, mesmo para comprimentos milimétricos.
+2. **Efeito de Espraiamento (*Fringing Effect*):** As linhas de campo se espalham nas bordas do entreferro, aumentando a área efetiva $A_g > A_{\text{núcleo}}$. Frequentemente corrige-se a área somando o comprimento do entreferro a cada dimensão da seção transversal: $A_g = (a + g)(b + g)$.
+
+---
+
+## 4. Núcleos Não-Lineares e Saturação
+
+Na prática, materiais ferromagnéticos reais apresentam curvas de magnetização não-lineares ($B \times H$) com fenômeno de saturação e histerese.
+
+```mermaid
+xychart-beta
+    title "Curva Típica de Magnetização B x H (Saturação)"
+    x-axis "Campo Magnético H [A/m]" [0, 100, 250, 500, 1000, 2000, 4000]
+    y-axis "Densidade de Fluxo B [T]" 0 --> 2.0
+    line [0.0, 0.6, 1.1, 1.45, 1.62, 1.72, 1.80]
+```
+
+### 4.1 Corrente de Pico ($I_{\text{pico}}$)
+A corrente de pico na bobina ocorre no instante em que a densidade de fluxo atinge seu valor máximo ($B_{\max}$). Pela Lei de Ampère:
 
 $$
-H = \frac{B}{\mu}
+N \cdot I_{\text{pico}} = H_{\max} \cdot l_c \implies I_{\text{pico}} = \frac{H_{\max} \cdot l_c}{N}
 $$
 
+onde $H_{\max}$ é obtido diretamente da curva $B-H$ ou tabela do fabricante correspondente a $B_{\max}$.
+
+---
+
+### 4.2 Corrente Eficaz ($I_{\text{rms}}$) em Excitação Não Linear
+Devido à distorção harmônica e às perdas no ferro (histerese e correntes parasitas), a corrente de excitação real não é puramente senoidal. O cálculo da corrente eficaz ($I_{\text{rms}}$) emprega a **Potência Aparente Específica** ($S_{\text{esp}}$, dada em $\text{VA/kg}$ ou $\text{VA/lb}$) tabelada para a densidade de fluxo de operação:
 
 $$
-B = \frac{\phi_{Wb}}{A}
+S = S_{\text{esp}} \times M_{\text{núcleo}} \quad [\text{VA}]
 $$
 
-$$
-\phi = \frac{NI}{{R}_n}
-$$
-
+Com a potência aparente de magnetização conhecida:
 
 $$
-L = \frac{\lambda}{I}
+S = V_{\text{rms}} \cdot I_{\text{rms}} \implies I_{\text{rms}} = \frac{S}{V_{\text{rms}}}
 $$
 
-$$
-W = \frac{1}{2} \cdot L \cdot I^2
-$$
+#### Exemplo Passo a Passo (Aço Silício M-19):
+1. **Volume geométrico do núcleo:**
+   $$
+   V_{\text{geo}} = A_{\text{geo}} \cdot l_c = 0{,}00258\text{ m}^2 \times 0{,}7112\text{ m} = 1{,}835 \times 10^{-3}\text{ m}^3
+   $$
+2. **Volume efetivo de aço** (considerando fator de empilhamento / laminação de $0{,}94$):
+   $$
+   V_{\text{aço}} = 0{,}94 \times 1{,}835 \times 10^{-3} = 1{,}725 \times 10^{-3}\text{ m}^3
+   $$
+3. **Massa do núcleo** (densidade $\rho = 7650\text{ kg/m}^3$):
+   $$
+   M = \rho \cdot V_{\text{aço}} = 7650 \times 1{,}725 \times 10^{-3} = 13{,}2\text{ kg} \approx 29{,}04\text{ lb}
+   $$
+4. **Potência aparente total:**
+   Se a tabela do aço fornece $18\text{ VA/lb}$ para a indução máxima solicitada:
+   $$
+   S = 18 \times 29{,}04 = 522{,}72\text{ VA}
+   $$
+5. **Corrente eficaz requerida:**
+   $$
+   I_{\text{rms}} = \frac{S}{V_{\text{rms}}}
+   $$
 
-$1\text{in} = 0,0254m$
+*(Consulte a resolução completa no arquivo [Listas Resolvidas](Listas%20Resolvidas.md#resolução-dos-exercícios-dos-slides)).*
 
-$1\text{cm}^2 = 100\mu m^2$ e $1\text{cm}^3 = 1\mu m^3$
+---
 
-### Corrente de pico
+## 5. Força de Sustentação / Elevação de um Eletroímã
 
-A corrente de pico ocorre quando o fluxo e a densidade de fluxo magnético estão no seu máximo ($B_{max}$). Usamos a Lei de Ampère:
-
-$$
-N \cdot I_{pico} = H_{max} \cdot l_c
-$$
-
-$$
-I_{pico} = \frac{ H_{max} \cdot l_c}{N}
-$$
-
-### Calcular a largura média do núcleo $l_c$
-
-É o caminho médio que o fluxo percorre no núcleo magnético:
-
-![](../../../../static/anexos/Pasted%20image%2020260929204410.png)
-
-Nesse exemplo: 
-- Largura média = $8 \text{ in} - 1 \text{ in} - 1 \text{ in} = 6 \text{ in}$
-    
-- Altura média = $10 \text{ in} - 1 \text{ in} - 1 \text{ in} = 8 \text{ in}$
-    
-- $l_c = 2 \times 6 \text{ in} + 2 \times 8 \text{ in} = 28 \text{ in}$
-    
-- Convertendo para metros: $l_c = 28 \times 0,0254 = 0,7112 \text{ m}$.
-
-### Corrente eficaz para núcleo não linear
-
-Encontrar a verdadeira corrente eficaz em um núcleo não-linear geralmente requer a tabela de Potência Aparente Específica (VA/lb) do aço, a qual usaria a densidade fornecida no enunciado. Assim, ao descobrir a potência $S$ podemos usar a fórmula:
+A força mecânica exercida por um campo magnético na interface entre o núcleo ferromagnético e uma armadura móvel decorre da taxa de variação da energia co-magnética em relação ao deslocamento:
 
 $$
-S = V_{rms} \cdot I_{rms}
+F = \frac{d W_m}{dx}
 $$
 
-Para o caso do exercício 5 do capítulo 2, presente da lista de resolução de exercícios [Listas Resolvidas](Listas%20Resolvidas.md#resolução-dos-exercícios-dos-slides)
-
-**Cálculo da Massa do Núcleo (usando a densidade dada de $7,65 \text{ g/cm}^3$ ou $7650 \text{ kg/m}^3$):**
-
-- $V_{geo} = A_{geo} \cdot l_c = 0,00258064 \cdot 0,7112 = 0,001835 \text{ m}^3$
-    
-- Volume de aço = $0,94 \cdot 0,001835 = 0,001725 \text{ m}^3$
-    
-- Massa = $7650 \cdot 0,001725 = 13,2 \text{ kg}$
-    
-Converter para lb $13,2 \text{kg} \cdot 2,2 =29,04 \text{lb}$
-
-Usar a tabela para o aço M-19:
-$$
-S = 18 \cdot 29,04 = 522,72 VA
-$$
-em que $18$ é o valor tabelado.
-
-Agora para a corrente eficaz:
+Para um entreferro com densidade de fluxo uniforme $B$ e área de contato total $A$:
 
 $$
-I_{rms} = \frac{S}{V_{rms}} = \frac{529,2}{\frac{274,36}{\sqrt{2}}} = 2,73 A
+F = \frac{B^2 \cdot A}{2\mu_0} \quad [\text{N}]
 $$
-### Força de elevação de um eletroímã
 
-A força de elevação de um eletroímã é a força magnética
-resultante da interação entre o campo magnético gerado pelo
-eletroímã e um objeto ferromagnético, como um pedaço de
-ferro. Quando uma corrente elétrica é aplicada ao enrolamento
-do eletroímã, um campo magnético é gerado, o que induz um
-campo magnético no objeto ferromagnético próximo. Esse
-campo magnético resultante cria uma força de atração entre o
-eletroímã e o objeto, conhecida como força de elevação.
+Se o fluxo magnético for produzido por uma bobina de $N$ espiras conduzindo corrente $I$ através de um circuito de comprimento médio total $l$:
 
 $$
 B = \frac{\mu \cdot N \cdot I}{l}
 $$
 
-onde $\mu$ é a permeabilidade magnética do material do
-núcleo, $N$ é o número de espiras, $I$ é a corrente elétrica e
-“$L$”​ é o comprimento médio do caminho magnético.
-
-A força magnética ($F$) sobre um objeto de área A
-dentro do campo magnético é dada por:
+Substituindo $B$ na equação da força de atração:
 
 $$
-F = B^2 A \frac{1}{2\mu}
+F = \frac{\left(\frac{\mu N I}{l}\right)^2 A}{2\mu} = \frac{\mu \cdot N^2 \cdot I^2 \cdot A}{2 l^2} \quad [\text{N}]
 $$
-onde $A$ é a área da superfície do objeto que
-interage com o campo magnético.
 
-Portanto, combinando as duas equações, obtemos a fórmula para a
-força de elevação (F) de um eletroímã:
-
-$$
-F = \frac{\mu N^2 I^2 A}{2 l^2}
-$$
-Exemplo disponível nas listas resolvidas Exercício 6 Cap. 2
+> [!TIP]
+> Caso existam dois polos de contato em série (formando um circuito magnético em "U"), a força total é a soma das forças desenvolvidas em ambas as faces de contato ($2 \times F_{\text{polo}}$).

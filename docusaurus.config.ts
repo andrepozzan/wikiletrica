@@ -20,6 +20,7 @@ const config = {
 
   // Estrutura atualizada para o Docusaurus v3.10+
   markdown: {
+    mermaid: true,
     hooks: {
       onBrokenMarkdownLinks: "warn",
     },
@@ -52,6 +53,7 @@ const config = {
   ],
 
   themes: [
+    "@docusaurus/theme-mermaid",
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       {

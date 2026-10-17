@@ -7,3 +7,14 @@ tags: [instalacoes-eletricas]
 # TE344 - Instalações Elétricas Prediais e Industriais I
 
 **Período/Ano:** 2° Semestre/2026  
+
+
+
+
+## Dimensionamento de condutores
+
+
+## Dimensionamento de eletrodutos
+
+
+
