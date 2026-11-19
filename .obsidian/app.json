@@ -2,5 +2,24 @@
   "useMarkdownLinks": true,
   "attachmentFolderPath": "static/anexos/",
   "newLinkFormat": "relative",
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "showUnsupportedFiles": false,
+  "userIgnoreFilters": [
+    "^src(?:/|$)",
+    "^blog(?:/|$)",
+    "^build(?:/|$)",
+    "^node_modules(?:/|$)",
+    "^scripts(?:/|$)",
+    "^\\.github(?:/|$)",
+    "^wiki-eletrica(?:/|$)",
+    "^copia-semestres(?:/|$)",
+    "^package\\.json$",
+    "^package-lock\\.json$",
+    "^tsconfig\\.json$",
+    "^docusaurus\\.config\\.ts$",
+    "^sidebars\\.ts$",
+    "^README\\.md$",
+    "^CONTRIBUTING\\.md$",
+    "^\\.gitignore$"
+  ]
 }

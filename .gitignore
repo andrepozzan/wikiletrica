@@ -10,6 +10,8 @@
 
 # Misc
 .DS_Store
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
 .env.local
 .env.development.local
 .env.test.local

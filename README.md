@@ -71,3 +71,16 @@ GIT_USER=andrepozzan npm run deploy
 ```
 
 O comando gera o site e envia o resultado para a branch `gh-pages`.
+
+## Publicação automática
+
+Cada alteração aceita na branch `main` dispara
+[.github/workflows/deploy-pages.yml](./.github/workflows/deploy-pages.yml),
+que compila o Docusaurus e publica o site no GitHub Pages.
+
+## Contribuindo
+
+Consulte [CONTRIBUTING.md](./CONTRIBUTING.md) para contribuir com um editor
+Markdown em Windows ou Linux. Os scripts `scripts/contribute.bat` e
+`scripts/contribute.sh` automatizam o fork, a branch, o commit, o envio e a
+abertura do Pull Request.
