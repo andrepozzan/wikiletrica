@@ -47,6 +47,10 @@ Antes de enviar, o script verifica se existem alterações. Ele cria uma branch,
 faz o commit, envia para seu fork e abre o Pull Request. Depois da revisão,
 aguarde a aprovação dos mantenedores antes de apagar a copia local.
 
+Assistentes de IA podem consultar [AGENTS.md](./AGENTS.md) para entender
+a estrutura do projeto, editar Markdown corretamente e seguir este fluxo
+de contribuicao sem alterar arquivos gerados.
+
 ## Publicação automática
 
 Cada alteração aceita na branch `main` inicia automaticamente o workflow

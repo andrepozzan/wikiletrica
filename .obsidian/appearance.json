@@ -1,4 +1,7 @@
 {
   "baseFontSize": 20,
-  "showRibbon": true
+  "showRibbon": true,
+  "enabledCssSnippets": [
+    "ocultar-pastas"
+  ]
 }

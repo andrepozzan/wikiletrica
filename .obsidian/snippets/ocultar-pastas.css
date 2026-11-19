@@ -1,0 +1,22 @@
+/* Oculta pastas técnicas no explorador de arquivos. */
+.nav-folder-title[data-path="node_modules"],
+.nav-folder-title[data-path="build"],
+.nav-folder-title[data-path="scripts"],
+.nav-folder-title[data-path="src"],
+.nav-folder-title[data-path="blog"],
+.nav-folder-title[data-path=".github"],
+.nav-folder-title[data-path="wiki-eletrica"],
+.nav-folder-title[data-path="copia-semestres"] {
+  display: none;
+}
+
+.nav-folder:has(> .nav-folder-title[data-path="node_modules"]),
+.nav-folder:has(> .nav-folder-title[data-path="build"]),
+.nav-folder:has(> .nav-folder-title[data-path="scripts"]),
+.nav-folder:has(> .nav-folder-title[data-path="src"]),
+.nav-folder:has(> .nav-folder-title[data-path="blog"]),
+.nav-folder:has(> .nav-folder-title[data-path=".github"]),
+.nav-folder:has(> .nav-folder-title[data-path="wiki-eletrica"]),
+.nav-folder:has(> .nav-folder-title[data-path="copia-semestres"]) {
+  display: none;
+}
