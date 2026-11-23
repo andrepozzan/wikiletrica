@@ -197,6 +197,10 @@ para pedir revisao humana.
   confirme que nao houve copia indevida de fontes externas.
 - Cite a fonte original em cada pagina sempre que a publicacao estiver
   autorizada, sem usar a citaçao como substituto para uma permissao ausente.
+- Se um autor pedir remoção, orientá-lo para a pagina
+  `docs/direitos-autorais.md` ou para o endereco
+  `andrepozzan.dev@gmail.com`. Não minimize o pedido nem solicite que o autor
+  publique dados pessoais desnecessarios em uma issue publica.
 
 O assistente nao deve decidir sozinho que um material esta autorizado. Em
 caso de duvida, a regra e nao publicar.

@@ -104,6 +104,11 @@ const config = {
             label: "Disciplinas",
           },
           {
+            to: "/docs/direitos-autorais/",
+            position: "right",
+            label: "Direitos autorais",
+          },
+          {
             href: "https://github.com/andrepozzan/wikiletrica",
             label: "GitHub",
             position: "right",
